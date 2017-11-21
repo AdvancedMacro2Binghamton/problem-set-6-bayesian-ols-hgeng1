@@ -8,7 +8,7 @@ data=DATA.data;
 [N,k]=size(data);
 df=N-k;
 iter=10000;
-r=0.12;
+r=0.11;
 
 %Initial OLS
 iota=ones(N,1); %constant
@@ -59,48 +59,48 @@ figure(1)
 subplot(2,4,1)
 histfit(THETA(:,1),100,'kernel')
 hold on
-line([theta(1) theta(1)],ylim,'Color','c','LineWidth',1)
+line([theta(1) theta(1)],ylim,'Color','blue','LineWidth',1)
 title('\beta_0')
 hold off
  
 subplot(2,4,2)
 histfit(THETA(:,2),100,'kernel')
 hold on
-line([theta(2) theta(2)],ylim,'Color','c','LineWidth',1)
+line([theta(2) theta(2)],ylim,'Color','ble','LineWidth',1)
 title('\beta_{educ}')
 hold off
 
 subplot(2,4,3)
 histfit(THETA(:,3),100,'kernel')
 hold on
-line([theta(3) theta(3)],ylim,'Color','c','LineWidth',1)
+line([theta(3) theta(3)],ylim,'Color','g','LineWidth',1)
 title('\beta_{exp}')
 hold off
 
 subplot(2,4,4)
 histfit(THETA(:,4),100,'kernel')
 hold on
-line([theta(4) theta(4)],ylim,'Color','c','LineWidth',1)
+line([theta(4) theta(4)],ylim,'Color','g','LineWidth',1)
 title('\beta_{SMSA}')
 hold off
 
 subplot(2,4,5)
 histfit(THETA(:,5),100,'kernel')
 hold on
-line([theta(5) theta(5)],ylim,'Color','c','LineWidth',1)
+line([theta(5) theta(5)],ylim,'Color','g','LineWidth',1)
 title('\beta_{black}')
 hold off
 
 subplot(2,4,6)
 histfit(THETA(:,6),100,'kernel')
 hold on
-line([theta(6) theta(6)],ylim,'Color','c','LineWidth',1)
+line([theta(6) theta(6)],ylim,'Color','g','LineWidth',1)
 title('\beta_{south}')
 hold off
  
 subplot(2,4,7)
 histfit(THETA(:,7),100,'kernel')
 hold on
-line([theta(7) theta(7)],ylim,'Color','c','LineWidth',1)
+line([theta(7) theta(7)],ylim,'Color','g','LineWidth',1)
 title('\sigma_{\epsilon}^2')
 hold off
