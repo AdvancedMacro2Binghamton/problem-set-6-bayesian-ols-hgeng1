@@ -1,4 +1,5 @@
 function f=logL(Y,X,beta,sd)
+%f: negative log likehood of normal
 %Y: log wage from data
 %beta: coeffient vector
 %sd: estimated standard deviation of residuls

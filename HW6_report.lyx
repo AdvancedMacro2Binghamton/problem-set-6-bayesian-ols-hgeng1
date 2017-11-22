@@ -1,0 +1,698 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsart
+\use_default_options true
+\begin_removed_modules
+eqs-within-sections
+figs-within-sections
+\end_removed_modules
+\begin_modules
+theorems-ams
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement h
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1in
+\topmargin 1in
+\rightmargin 1in
+\bottommargin 1in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Home 6.
+ Bayesian OLS – Report
+\end_layout
+
+\begin_layout Author
+Huayan Geng
+\end_layout
+
+\begin_layout Date
+11/21/2017
+\end_layout
+
+\begin_layout Section*
+Q1.
+ OLS Estimation
+\end_layout
+
+\begin_layout Standard
+The linear model is 
+\begin_inset Formula 
+\begin{eqnarray*}
+log(wage) & = & \beta_{0}+\beta_{educ}Educ+\beta_{exp}Expr+\beta_{SMSA}D_{SMSA}+\beta_{black}D_{race}+\beta_{south}D_{region}+\varepsilon\\
+ & \text{or}\\
+Y & = & X\beta+\varepsilon
+\end{eqnarray*}
+
+\end_inset
+
+ where 
+\begin_inset Formula $\varepsilon\sim\boldsymbol{N}(0,\sigma^{2})$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Given dataset card.csv, Table 1 shows the OLS estimation output and standard
+ error of all coefficients.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+OLS Estimation Output
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Variables
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\hat{\beta}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+s.e
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Constant (
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.913331
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.063121
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Education (
+\begin_inset Formula $\beta_{educ}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.073807
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.003534
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Experience (
+\begin_inset Formula $\beta_{exp}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.039313
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.002196
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SMSA (
+\begin_inset Formula $\beta_{SMSA}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.164741
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.015692
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Race (
+\begin_inset Formula $\beta_{black}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.188223
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.017768
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Region (
+\begin_inset Formula $\beta_{south}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.129053
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.015229
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Considering homoskedasticity, the 
+\begin_inset Formula $\hat{\sigma}_{\varepsilon}^{2}=\frac{RSS}{n-k}=0.1423$
+\end_inset
+
+ which is unbiased estimator of 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ As we assumed , the 
+\begin_inset Formula $(n-k)\hat{\sigma}_{\varepsilon}^{2}/\sigma^{2}\stackrel{d}{\rightarrow}\chi_{n-k}^{2}$
+\end_inset
+
+ whose variance is 
+\begin_inset Formula $2(n-k)$
+\end_inset
+
+.
+ Therefore, the 
+\begin_inset Formula 
+\begin{eqnarray*}
+Var\left((n-k)\hat{\sigma}_{\varepsilon}^{2}/\sigma^{2}\right) & = & 2(n-k)\\
+\left(\frac{n-k}{\sigma^{2}}\right)^{2}Var\left(\hat{\sigma}_{\varepsilon}^{2}\right) & = & 2(n-k)\\
+Var\left(\hat{\sigma}_{\varepsilon}^{2}\right) & = & 2(n-k)\left(\frac{\sigma^{2}}{n-k}\right)^{2}\\
+Var\left(\hat{\sigma}_{\varepsilon}^{2}\right) & = & 2\sigma^{4}/(n-k)
+\end{eqnarray*}
+
+\end_inset
+
+.
+ Given data, 
+\begin_inset Formula $Var\left(\hat{\sigma}_{\varepsilon}^{2}\right)=1.3479\times10^{-5}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+Q2.
+ Bayesian Estimation (Metropolis-Hastings)
+\end_layout
+
+\begin_layout Standard
+The parameter vector I am supposed to estimate is 
+\begin_inset Formula $\theta=\left[\begin{array}{ccccccc}
+\beta_{0} & \beta_{educ} & \beta_{exp} & \beta_{SMSA} & \beta_{black} & \beta_{south} & \sigma_{\varepsilon}^{2}\end{array}\right]^{T}$
+\end_inset
+
+ and our proposal 
+\begin_inset Formula $\tilde{\theta}_{n+1}=\hat{\theta}_{n}+v$
+\end_inset
+
+ where 
+\begin_inset Formula $v$
+\end_inset
+
+ follows multivariate normal distribution 
+\begin_inset Formula $\boldsymbol{N}(\mu_{0},\Sigma)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\mu_{0}=\left[\begin{array}{ccccccc}
+0 & 0 & 0 & 0 & 0 & 0 & 0\end{array}\right]$
+\end_inset
+
+ and 
+\begin_inset Formula 
+\begin{eqnarray*}
+\Sigma & =r\times & \left[\begin{array}{ccccccc}
+Var(\hat{\beta}_{0}) & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & Var(\hat{\beta}_{educ}) & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & Var(\hat{\beta}_{exp}) & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & Var(\hat{\beta}_{SMSA}) & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & Var(\hat{\beta}_{black}) & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & Var(\hat{\beta}_{south}) & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & Var(\hat{\sigma_{\varepsilon}^{2}})
+\end{array}\right]
+\end{eqnarray*}
+
+\end_inset
+
+ where 
+\begin_inset Formula $r$
+\end_inset
+
+ is the adjusted scalar of the variance-covariance matrix.
+ The likelihood of 
+\begin_inset Formula $Y\equiv log(wage)$
+\end_inset
+
+ follows normal distribution because 
+\begin_inset Formula $\varepsilon\sim\boldsymbol{N}(0,\sigma^{2})$
+\end_inset
+
+.
+ Also, 
+\begin_inset Formula $L(\theta)\equiv P(y|\theta)\times P(\theta)$
+\end_inset
+
+.
+ When 
+\begin_inset Formula $\frac{L(\tilde{\theta}_{n+1})}{L(\hat{\theta}_{n})}>u$
+\end_inset
+
+, we accept proposal 
+\begin_inset Formula $\hat{\theta}_{n+1}=\tilde{\theta}_{n+1}$
+\end_inset
+
+, otherwise 
+\begin_inset Formula $\hat{\theta}_{n+1}=\hat{\theta}_{n}$
+\end_inset
+
+ where 
+\begin_inset Formula $u$
+\end_inset
+
+ is a random number between 
+\begin_inset Formula $0$
+\end_inset
+
+ and 
+\begin_inset Formula $1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+A.
+ Flat Priors
+\end_layout
+
+\begin_layout Standard
+Due to the flat priors of all parameters, 
+\begin_inset Formula $\frac{L(\tilde{\theta}_{n+1})}{L(\hat{\theta}_{n})}=\frac{P(y|\tilde{\theta}_{n+1})}{P(y|\hat{\theta}_{n})}$
+\end_inset
+
+.
+ Figure 1 shows posterior distribution using flat priors where red line
+ indicates the kernel distribution of estimators and vertical line indicates
+ the OLS point estimates.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Posterior Distributions with Flat Prior v.s OLS Estimates
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Graphics
+	filename Graphs/prior_flat.png
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+B.
+ Given Prior of 
+\begin_inset Formula $\beta_{educ}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Given the information about 
+\begin_inset Formula $\beta_{educ}$
+\end_inset
+
+ and known the flat prior distributions for other parameters, the joint
+ prior distribution of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is the same as 
+\begin_inset Formula $\beta_{educ}\sim\boldsymbol{N}(0.06,0.0255^{2})$
+\end_inset
+
+.
+ In this case, 
+\begin_inset Formula $\frac{L(\tilde{\theta}_{n+1})}{L(\hat{\theta}_{n})}=\frac{P(y|\tilde{\theta}_{n+1})P(\tilde{\beta}_{educ,n+1})}{P(y|\hat{\theta}_{n})P(\hat{\beta}_{educ,n})}$
+\end_inset
+
+.
+ Figure 2 shows posterior distribution given 
+\begin_inset Formula $\beta_{educ}$
+\end_inset
+
+ prior distribution where red line indicates the kernel distribution of
+ estimators and vertical line indicates the OLS point estimates.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Posterior Distributions with Priors v.s OLS Estimates
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Graphs/prior_educ.png
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Q3.
+ Summary
+\end_layout
+
+\begin_layout Subsection*
+1.
+ Acceptance Rate
+\end_layout
+
+\begin_layout Standard
+To get reasonably fast convergence properties, I tried and obtain 
+\begin_inset Formula $r=0.12$
+\end_inset
+
+ to the acceptance rate as 23.95% for Section 2.A and 22.44% for given-prior
+ Section 2.B.
+\end_layout
+
+\begin_layout Subsection*
+2.
+ Bayesian Estimation v.s.
+ OLS Estimation of Linear Equation
+\end_layout
+
+\begin_layout Standard
+OLS estimation gives point estimates of parameters but Bayesian estimation
+ offers distribution of parameters.
+ The most distributions of parameters provided by the Bayesian estimation
+ looks like symmetric and centering around OLS point estimates.
+ Also this situation is slightly significant in flat-prior case.
+ However, in general, comparing two kinds of prior distribution, the parameters
+ distributions do not change much.
+ 
+\end_layout
+
+\end_body
+\end_document
